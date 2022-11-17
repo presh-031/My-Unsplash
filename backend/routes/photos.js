@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { getPhotos, getPhoto, createPhoto } = require("../controllers/workoutController");
+const { getPhotos, deletePhoto, createPhoto } = require("../controllers/workoutController");
 
 // GET all photos
 router.get("/", getPhotos);
 
 // DELETE a photo
-router.get("/:id", getPhoto);
+router.get("/:id", deletePhoto);
 
 // POST a new photo
 router.post("/", createPhoto);
