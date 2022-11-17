@@ -12,6 +12,8 @@ const Header = () => {
         </div>
       </div>
       <button className="btn">Add a photo</button>
+
+      {/* Modal and background */}
       <div className="modalBg fixed top-0 left-0 flex h-[100vh] w-[100vw] items-center justify-center   bg-black bg-opacity-20">
         <NewMovieModal />
       </div>
