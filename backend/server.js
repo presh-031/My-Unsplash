@@ -1,9 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const cors = require("cors");
 
-import dotenv from "dotenv";
-import cors from "cors";
-
+const photosRoutes = require("./routes/photos");
 const app = express();
 
 dotenv.config();
@@ -29,3 +29,4 @@ mongoose
   .catch((err) => console.log(err.message));
 
 // routes
+app.use("/api/photos", photosRoutes);
