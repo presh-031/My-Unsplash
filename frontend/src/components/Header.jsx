@@ -1,5 +1,5 @@
 import { FaUserAlt } from "react-icons/fa";
-import NewMovieModal from "./NewMovieModal";
+import NewPhotoModal from "./NewPhotoModal";
 
 const Header = () => {
   return (
@@ -15,7 +15,7 @@ const Header = () => {
 
       {/* Modal and background */}
       <div className="modalBg fixed top-0 left-0 flex h-[100vh] w-[100vw] items-center justify-center   bg-black bg-opacity-20">
-        <NewMovieModal />
+        <NewPhotoModal />
       </div>
     </header>
   );
