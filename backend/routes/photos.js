@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getPhotos, deletePhoto, createPhoto } = require("../controllers/workoutController");
+const { getPhotos, deletePhoto, createPhoto } = require("../controllers/photos");
 
 // GET all photos
 router.get("/", getPhotos);

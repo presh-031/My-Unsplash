@@ -7,7 +7,7 @@ const getPhotos = async (req, res) => {
   try {
     const photos = await Photo.find().sort({ createdAt: -1 });
 
-    res.status(200).json(workouts);
+    res.status(200).json(photos);
   } catch (err) {
     res.status(404).json({
       error: err.message,
@@ -15,7 +15,7 @@ const getPhotos = async (req, res) => {
   }
 };
 // DELETE a photo
-const deleteWorkout = async (req, res) => {
+const deletePhoto = async (req, res) => {
   const id = req.params.id;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -37,7 +37,7 @@ const deleteWorkout = async (req, res) => {
 };
 
 // POST a photo
-export const createPost = async (req, res) => {
+const createPhoto = async (req, res) => {
   const { label, url } = req.body;
 
   try {
@@ -56,6 +56,6 @@ export const createPost = async (req, res) => {
 
 module.exports = {
   getPhotos,
-  getPhoto,
+  deletePhoto,
   createPhoto,
 };
