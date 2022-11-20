@@ -1,7 +1,12 @@
 import { FaUserAlt } from "react-icons/fa";
 import NewPhotoModal from "./NewPhotoModal";
 
+import { useSelector } from "react-redux";
+
+import { useDispatch } from "react-redux";
+import { formView } from "../features/form/formSlice";
 const Header = () => {
+  const form = useSelector((state) => state.form);
   return (
     <header className="flex py-[3.2rem]  items-center justify-between">
       <div className=" flex gap-[0.92rem]  items-end">
@@ -14,9 +19,11 @@ const Header = () => {
       <button className="btn">Add a photo</button>
 
       {/* Modal and background */}
-      <div className="modalBg fixed top-0 left-0 flex h-[100vh] w-[100vw] items-center justify-center   bg-black bg-opacity-20">
-        <NewPhotoModal />
-      </div>
+      {form && (
+        <div className="modalBg fixed top-0 left-0 flex h-[100vh] w-[100vw] items-center justify-center   bg-black bg-opacity-20">
+          <NewPhotoModal />
+        </div>
+      )}
     </header>
   );
 };
