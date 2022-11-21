@@ -29,7 +29,6 @@ const NewMovieModal = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // send a post request to server with the new values
-
     dispatch(formView());
   };
   return (
