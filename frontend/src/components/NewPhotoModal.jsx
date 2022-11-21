@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { useDispatch } from "react-redux";
 import { formView } from "../features/form/formSlice";
 
@@ -26,9 +27,22 @@ const NewMovieModal = () => {
     dispatch(formView());
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // send a post request to server with the new values
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    };
+
+    const res = await fetch("/api/photos", options);
+    const data = await res.json();
+
+    // according to endpoint, data should be the new document created on db.
+    console.log(data);
     dispatch(formView());
   };
   return (
