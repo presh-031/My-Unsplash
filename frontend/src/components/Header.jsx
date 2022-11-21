@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { formView } from "../features/form/formSlice";
 const Header = () => {
   const form = useSelector((state) => state.form);
+
+  const dispatch = useDispatch();
   return (
     <header className="flex py-[3.2rem]  items-center justify-between">
       <div className=" flex gap-[0.92rem]  items-end">
@@ -16,7 +18,14 @@ const Header = () => {
           <p className="font-medium text-[0.9rem] leading-[1.226rem]">devchallenges.io</p>
         </div>
       </div>
-      <button className="btn">Add a photo</button>
+      <button
+        onClick={() => {
+          dispatch(formView());
+        }}
+        className="btn"
+      >
+        Add a photo
+      </button>
 
       {/* Modal and background */}
       {form && (
