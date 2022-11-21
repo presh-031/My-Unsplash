@@ -39,14 +39,15 @@ const deletePhoto = async (req, res) => {
 // POST a photo
 const createPhoto = async (req, res) => {
   const { label, url } = req.body;
+  console.log(req.body);
 
   try {
-    const newPhoto = await newPost.create({
+    const newPhoto = await Photo.create({
       label,
       url,
     });
 
-    res.status(201).json(newPost);
+    res.status(201).json(newPhoto);
   } catch (error) {
     res.status(409).json({
       message: error.message,
